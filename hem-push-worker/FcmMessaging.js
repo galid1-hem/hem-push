@@ -8,7 +8,7 @@ admin.initializeApp({
 
 const messaging = admin.messaging();
 
-const userToken = "fzXf5f86Rmi3EYsigVC-MG:APA91bF6Ii3kFE6v0Y_jlAaJ1etT94ZcGorcZ3xr0xL4ne1DSElTNq7tsnoA-vIabzULd-hEdm7OJwHiXKXoWb_iavJv4BP_YqdFVsVyhEV8tXmshqtVpJT4wFT5_fEYb7Ofo29u0DgK";
+const userToken = "fXoS6Qt9SlSf35iCKnhD_c:APA91bFK0D7KjWZIaLSmupDeBSFZnc8LD4NjmlcBNymvaqAZh01k1EcPxYEz6nFemFjl83zhmslxXv0sSyygrJ8ET-9FkVrH5djItzGWk-bllt7Zg7XCVUkQUcpjJ0blO5yoYFKt9DpF";
 
 messaging.sendMulticast({
     tokens: [userToken],
