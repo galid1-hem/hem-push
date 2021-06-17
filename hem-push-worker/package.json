@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "bull": "^3.22.8",
-    "firebase-admin": "^9.9.0"
-  }
+    "firebase-admin": "^9.9.0",
+    "mongodb": "^3.6.9"
+  },
+  "type": "module"
 }

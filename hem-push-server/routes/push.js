@@ -1,15 +1,29 @@
-var express = require('express');
+const express = require('express');
+const createPushTokenJob = require("../producer/CreatePushTokenProducer");
+const createNotificationJob = require("../producer/CreateNotificationProducer");
+const CreatePushTokenRequest = require("../dto/CreatePushTokenRequest");
+const CreateNotificationRequest = require("../dto/CreateNotificationRequest");
 
-var router = express.Router();
+const router = express.Router();
 
-router.post("/", (req, res) => {
-  console.log("req: " , req.body);
-  res.send({"ok": "OKOK"})
+router.post("/tokens", (req, res) => {
+    createPushTokenJob(new CreatePushTokenRequest(
+        req.body.user_id,
+        req.body.device_id,
+        req.body.push_token,
+        req.body.os
+    ));
+
+    res.send({"ok": "OKOK"})
 });
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send({"ok": "!@#"});
+router.post("/", (req, res) => {
+    createNotificationJob(new CreateNotificationRequest(
+        req.body.user_id,
+        req.body.notification
+    ));
+
+    res.send({"ok": "notification"});
 });
 
 module.exports = router;
