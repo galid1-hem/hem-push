@@ -1,9 +1,7 @@
-import { redisDomain } from "../const/RedisDomain.js";
 import mongoClient from "../util/Db.js";
-import Queue from 'bull';
 import messaging from "../util/FcmMessaging.js";
 
-const createNotificationQueue = new Queue("createNotificationQueue", redisDomain);
+import createNotificationQueue from "../../queue/createNotificationQueue.js";
 
 export default mongoClient.then(mongoClient => {
     mongoClient.connect(() => {

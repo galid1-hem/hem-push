@@ -1,2 +1,2 @@
-import CreatePushTokenWorker from "../worker/CreatePushTokenWorker.js";
+import CreatePushTokenWorker from "../worker/RegisterPushTokenWorker.js";
 import SendNotificationWorker from "../worker/SendNotificationWorker.js";

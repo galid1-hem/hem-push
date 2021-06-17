@@ -1,4 +1,4 @@
-const createNotificationQueue = require('../queue/createNotificationQueue');
+const createNotificationQueue = require('../../queue/createNotificationQueue');
 
 const createNotificationJob = (createPushTokenRequest) => {
     createNotificationQueue.add(createPushTokenRequest);

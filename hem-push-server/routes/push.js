@@ -1,13 +1,13 @@
 const express = require('express');
-const createPushTokenJob = require("../producer/CreatePushTokenProducer");
+const registerPushTokenJob = require("../producer/RegisterPushTokenProducer");
 const createNotificationJob = require("../producer/CreateNotificationProducer");
-const CreatePushTokenRequest = require("../dto/CreatePushTokenRequest");
+const RegisterPushTokenRequest = require("../dto/RegisterPushTokenRequest");
 const CreateNotificationRequest = require("../dto/CreateNotificationRequest");
 
 const router = express.Router();
 
 router.post("/tokens", (req, res) => {
-    createPushTokenJob(new CreatePushTokenRequest(
+    registerPushTokenJob(new RegisterPushTokenRequest(
         req.body.user_id,
         req.body.device_id,
         req.body.push_token,
